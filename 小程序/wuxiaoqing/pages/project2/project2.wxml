@@ -1,0 +1,71 @@
+<!--pages/project2/project2.wxml-->
+<view class="project2">
+  <view class="logo">
+    <image src="/images/woyou_logo.jpg"></image>
+  </view>
+  <view class="introduce">
+    <text>'我柚话说'是一家专注于聊天讨论的探讨软件</text>
+  </view>
+
+  <view class="content">
+    <view>应用选项</view>
+    <view>
+      <text>首页：用来发布想讨论的话题</text>
+    </view>
+    <view>
+      <text>发布页：会让发布者上传封面，输入话题、描、上</text>
+      <text>传图片，是否开始投票等。</text>
+    </view>
+
+    <view class="banner">
+      <image src="/images/woyou_img1.jpg"></image>
+      <image src="/images/woyou_img2.jpg"></image>
+    </view>
+
+
+
+  </view>
+  <view class="content">
+    <view>发现选项</view>
+    <view>
+      <text>包含一个推荐话题，和热门话题</text>
+    </view>
+
+    <view class="banner">
+      <image src="/images/woyou_img3.jpg"></image>
+      <image src="/images/woyou_img4.jpg"></image>
+    </view>
+
+
+
+  </view>
+  <view class="content">
+    <view>评论，分享选项</view>
+
+
+    <view class="banner">
+      <image src="/images/woyou_img5.jpg"></image>
+      <image src="/images/woyou_img6.jpg"></image>
+    </view>
+
+
+
+  </view>
+  <view class="content">
+    <view>个人选项</view>
+    <view>
+      <text>个人页：包含基本功能，可观看用户关注粉丝，接受</text>
+      <text>的消息，与客服讨论等情况</text>
+    </view>
+
+
+    <view class="banner">
+      <image src="/images/woyou_img7.jpg"></image>
+      <image src="/images/woyou_img8.jpg"></image>
+    </view>
+
+
+
+  </view>
+
+</view>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	var p = new Promise(function(res,rej){
+//		axios.get('ssss').then(res=>{
+//			if(res.code==200){
+//				res(res.data)// 只是用来 返回一个值
+//				
+//			}
+//		}).then(res=>{
+//			rej(res)
+//		})
+//		
+//	})
+////	
+//	 p.then(res=>{
+//	 	console.log(res)
+//	 })then(res=>{
+//	 	
+//	 })
+
+var p = new Promise(function(res,rej){
+	var n =0;
+	setTimeout(function(){
+		n=10;
+		res(n)
+	},500)
+})
+
+p.then(res=>{
+	console.log(res)
+})
+//
+//
+//	var n =0;
+//	setTimeout(function(){
+//		n=10;
+//		console.log(n)
+//	},500)
+
+// 1  promise 处理异步    （把异步请求的结果 保存起来，在任意地方都可以使用）
+
+// 2 解决回调地狱
+
+//axios.get().then(res=>{
+//	//res.id
+//	axios.get(xxxxx?id=res.id).then(res=>{
+//		// res.data
+//		axios.get('xxxxxx?data='+res.data).then(res=>{
+//			
+//		})
+//	})
+//})
+//
+//var p1 = new Promise(function(reslove,rej){
+//	axios.get().then(res=>{
+//		reslove(res)
+//	})
+//})
+//
+//var p2 = new Promise(function(reslove,rej){
+//	p1.then(r=>{
+//		axios.get(xxxxx?id=r.id).then(res=>{
+//			reslove(res)
+//		})
+//	})
+//	
+//})
+//
+//p2
+
+// 3 Promise.all () 能执行多个 异步请求，并控制其返回顺序    全部成功的话全部返回     一个失败全部失败 
+
+// 4 Promise.race()
+var a;
+var p1 = new Promise(function(r,j){
+	setTimeout(function(){
+	  a=1
+	  r(a);
+},0)
+})
+
+var p2 = new Promise(function(r,j){
+	setTimeout(function(){
+	  a=2
+	  r(a);
+},5000)     
+})
+
+
+var p3 = new Promise(function(r,j){
+	setTimeout(function(){
+	  a=3
+	  r(a);
+},0)
+})
+
+Promise.all([p1,p2,p3]).then(res=>{
+	console.log(res)  // [1,2,3]
+})
+
+
+Promise.race([p1,p2,p3]).then(res=>{ //返回 最快的 那个异步（ promise）结果  就一个
+	res  // 
+})
+// 接口1   接口2  接口3 
+
+// 我想按顺序得到      接口1   接口2  接口3 
+
+//new Promise.all['接口1','接口2','接口3'].then(res=>{
+//	//  res   ['接口1的值','接口2的值','接口3的值']
+//	
+//})
+
+
+
+
+
+
+
+
+	
+//
+////promise执行顺序
+////let promise = new Promise((resolve, reject) =>{
+////  console.log("Promise");
+////  resolve();
+////});
+////promise.then(function() {
+////  console.log("Resolved");
+////})
+////console.log("Hi!");
+////输出顺序为
+////	Promise
+////	Hi!
+////	Resolved
+//
+//
+//
+////Promise.resolve().then(() => {
+////	console.log("Resolved")
+////})
+////console.log("err")
+//
+//
+//
+//
+//
+////promise使用
+////var p = new Promise(function(resolve, reject){
+////      setTimeout(function(){
+////          var num = Math.ceil(Math.random()*10);
+////          if(num<=5){
+////              resolve(num);
+////          }
+////          else{
+////              reject('数字太大了'+num);
+////          }
+////      }, 2000);
+////  })
+////
+////p.then(
+////  function(data){
+////      console.log('resolved');
+////      console.log(data);
+////  }, 
+////  function(reason){
+////      console.log('rejected');
+////      console.log(reason);
+////  }
+////)
+////
+////
+////
+////.then链式调用
+//var promise = new Promise(function(resolve, reject){
+//  resolve(); // 这是promise的一个机制，只有promise实例的状态变为resolved，才会会触发then回调函数
+//});
+//
+//promise.then(function(){
+//  for(var i=0;i<100;i++) {
+//      console.log('c')
+//  }    
+//})
+//.then(function(){
+//  console.log('b')
+//})
+//.then(function(){
+//  console.log('a')
+//})
+//var c=function(){
+//  for(var i=0;i<100;i++) {
+//      console.log('c')
+//  }
+// 
+// var b=
+
+
+
+
+//promise实例套用
+//const p1 = new Promise(function (resolve, reject) {
+//  console.log('调用返回p1的resolve给p2');
+//  resolve('success11')
+//})
+//
+//const p2 = new Promise(function (resolve, reject) {
+//  console.log('1秒之后，调用p1');
+//  setTimeout(() => resolve(p1), 1000)
+//})
+//
+//p2.then(result => console.log(result))
+//.catch(error => console.log(error))
+
+
+	</script>
+</html>

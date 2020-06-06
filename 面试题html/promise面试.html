@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    setTimeout(function () {
+        console.log(1)
+    }, 0);
+    new Promise(function (resolve) {
+        console.log(2);
+        for (var i = 0; i < 100; i++) {
+            i == 99 && resolve();
+        }
+        console.log(3)
+    }).then(function () {
+        console.log(4)
+    }).then(function () {
+        console.log(5)
+    }).then(function () {
+        console.log(6)
+    });
+    console.log(7)
+
+    2374561
+
+    class Cash {
+        constructor(amount) {
+            this.amount = 0;
+            if (amount instanceof Cash) {
+                this.amount += amount.amount;
+            } else {
+                this.amount += amount;
+            }
+
+            this.valueOf = () => this.amount;
+        }
+
+        static add(src, extra) {
+            return new Cash(src.amount + extra.amount);
+        }
+
+        add(src) {
+            return new Cash(this.amount + src.amount);
+        }
+
+        toString() {
+            const yuan = Math.floor(this.amount / 100);
+            const rest = this.amount % 100;
+            const jiao = Math.floor(rest / 10);
+            const fen = rest % 10;
+            return `${yuan}元${jiao}角${fen}分`;
+        }
+    }
+
+    const cash1 = new Cash(105);
+    const cash2 = new Cash(66);
+    const cash3 = cash1.add(cash2);
+    const cash4 = Cash.add(cash1, cash2);
+    const cash5 = new Cash(cash1 + cash2);
+    console.log(`${cash3.toString()}`, `${cash4.toString()}`, `${cash5.toString()}`);
+
+</script>

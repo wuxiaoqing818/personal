@@ -1,0 +1,44 @@
+stages:
+- name: build
+  steps:
+  - runScriptConfig:
+      image: node:latest
+      shellScript: |-
+        npm install -g cnpm --registry=https://registry.npm.taobao.org
+        #cnpm update
+        cnpm install
+        cnpm run build
+    when:
+      branch:
+        include:
+        - master
+        - develop
+- name: Publish
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: hairdressing-frontend1-${CICD_GIT_BRANCH}:${CICD_GIT_COMMIT}
+      registry: registry-vpc.cn-hangzhou.aliyuncs.com
+    env:
+      PLUGIN_DEBUG: "true"
+      PLUGIN_INSECURE: "true"
+    when:
+      branch:
+        include:
+        - master
+        - develop
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment_develop.yaml
+    when:
+      branch:
+        include:
+        - develop
+  - applyYamlConfig:
+      path: ./deployment_production.yaml
+    when:
+      branch:
+        include:
+        - master

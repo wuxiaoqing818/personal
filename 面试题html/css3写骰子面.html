@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        height: 100%;
+        background-color: skyblue;
+    }
+
+    ul {
+        height: 100px;
+        width: 100px;
+        border: 1px solid gray;
+        list-style: none;
+        padding: 0;
+        /*兼容处理*/
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+        /*在父元素中开启布局*/
+        display: flex;
+        margin: 10px;
+        float: left;
+    }
+
+    li {
+        width: 20px;
+        height: 20px;
+        background-color: #000;
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+    ul:nth-child(2) {
+        /*设置子元素在横轴的对齐方式*/
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
+    }
+
+    ul:nth-child(3) {
+        -webkit-justify-content: flex-end;
+        -moz-justify-content: flex-end;
+        -ms-justify-content: flex-end;
+        -o-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    ul:nth-child(4) {
+        -webkit-justify-content: flex-end;
+        -moz-justify-content: flex-end;
+        -ms-justify-content: flex-end;
+        -o-justify-content: flex-end;
+        justify-content: flex-end;
+        /*设置子元素在纵轴的对齐方式*/
+        -ms-align-items: center;
+        align-items: center;
+    }
+
+    ul:nth-child(5) {
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
+        -ms-align-items: center;
+        align-items: center;
+    }
+
+    ul:nth-child(6) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    ul:nth-child(7) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    ul:nth-child(7) li:nth-child(2) {
+        /*设置子元素自身在纵轴的对齐方式*/
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+    }
+
+    ul:nth-child(8) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    ul:nth-child(8) li:nth-child(2) {
+        -ms-align-self: center;
+        align-self: center;
+    }
+
+    ul:nth-child(8) li:nth-child(3) {
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+    }
+
+    ul:nth-child(9) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+        /*开启弹性布局后，默认方向是横着放，可以改变其摆放方式*/
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+    }
+
+    ul:nth-child(10) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+        /*弹性布局默认一行排布，子元素过多时，其宽度会发生变化*/
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    ul:nth-child(10) li:nth-child(3) {
+        margin-right: 20px;
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+    }
+
+    ul:nth-child(10) li:nth-child(4) {
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+    }
+
+    ul:nth-child(11) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+        /*开启换行后，align-items和align-self失去效果，但align-content可以调整其在纵轴的对齐方式*/
+        -webkit-align-content: space-between;
+        -moz-align-content: space-between;
+        -ms-align-content: space-between;
+        -o-align-content: space-between;
+        align-content: space-between;
+    }
+
+    ul:nth-child(11) li:nth-child(3) {
+        margin: 0 40px;
+    }
+
+    ul:nth-child(12) {
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: space-between;
+        -moz-align-content: space-between;
+        -ms-align-content: space-between;
+        -o-align-content: space-between;
+        align-content: space-between;
+    }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

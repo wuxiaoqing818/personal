@@ -1,0 +1,76 @@
+/* pages/addressCheck/addressCheck.wxss */
+
+.addressCheck {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  background: #eee;
+}
+
+.content {
+  padding-left: 30rpx;
+  background: white;
+}
+
+.address {
+  padding: 30rpx 30rpx 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #ccc;
+  background: white;
+}
+.address:last-of-type {
+  margin-bottom: 120rpx;
+}
+
+.address>view {
+  display: flex;
+  align-items: center;
+}
+
+.address>view image {
+  margin-right: 30rpx;
+}
+
+.address>view text {
+  display: block;
+  font-size: 32rpx;
+}
+
+.address>view text:nth-of-type(1) {
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+}
+
+.address image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2rpx solid #ccc;
+  background: white;
+}
+
+.footer image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+
+.footer>view {
+  display: flex;
+  align-items: center;
+}
+
+.footer>image {
+  margin-right: 40rpx;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //es5的继承 混合继承 组合继承 经典继承
+    function Person(name) {
+        this.name = name;
+        this.sayHello = function () {
+            alert('hello')
+        }
+    }
+    // 方法挂在原型上
+    Person.prototype.say = function () {
+        alert('hello')
+    }
+    // console.log(Person.prototype)
+
+    var p = new Person('张三')
+    var p2 = new Person('李四')
+    console.log(p.sayHello == p2.sayHello)
+    console.log(p.say == p2.say)
+    // false 证明 每个对象都有一个自己的方法
+    // true  每个对象都有一个自己的方法
+
+    function Student(name) {
+        //借用父构造函数
+        Person.call(this, name);  //改变this指向 我们让person创建对象 但使用的this是 student的this
+    }
+    //值类型的复制  类似深拷贝
+    Student.prototype.say = Person.prototype.say;
+    var s = new Student('儿子')
+    console.log(s)
+    Person.prototype.say = null
+    console.log(p)
+    // //对象的复制  类似浅拷贝
+    // Student.prototype = Person.prototype;
+    // var s = new Student('继承')
+    // console.log(s)
+    // Person.prototype.say = null
+    // console.log(p)
+    //有什么不同
+    //Student.prototype.say = Person.prototype.say;   //值类型 的复制
+    //Student.prototype = Person.prototype;   //复制的是对象的引用
+    //可以引出深拷贝和浅拷贝
+    //浅拷贝
+    var arr1 = [];
+    var arr2 = arr1;
+    arr1.push(1)
+    console.log('这是浅拷贝', arr2)
+    //深拷贝
+    var a = { name: 123, age: 23 };
+    var b = JSON.parse(JSON.stringify(a))
+    a.id = 0
+    console.log('这是深拷贝', b)
+
+
+
+</script>

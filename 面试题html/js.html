@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function polyfillBind (fn, ctx) {
+        function boundFn (a) {
+            var l = arguments.length;
+            return l
+                ? l > 1
+                    ? fn.apply(ctx, arguments)
+                    : fn.call(ctx, a)
+                : fn.call(ctx)
+        }
+
+        boundFn._length = fn.length;
+        return boundFn()
+    }
+
+    // polyfillBind(1,2)
+    
+function fn(a){
+    this.a = a
+  
+}
+
+function t(a){
+    this.a = a
+
+}
+
+console.log(polyfillBind(fn(5),t(6)))
+   
+</script>

@@ -1,0 +1,33 @@
+<!--pages/sort/sort.wxml-->
+<view class="sort">
+  <view class="search">
+    <input placeholder="输入搜索关键词" bindconfirm='goSearch' confirm-type="search" value="{{searchName}}">
+    <image src="/images/search.png"></image>
+    </input>
+  </view>
+
+  <view class="main">
+    <view class="nav">
+      <text wx:for-items="{{sortList}}" data-index='{{index}}' bindtap="show" class="{{item.id==sortId?'textActive':''}}" wx:if="{{item.type=='分类'}}" data-id="{{item.id}}">{{item.name}}</text>
+    </view>
+    <view class="goods">
+      <view class="goodsContent" wx:for-items="{{goodsList}}" bindtap="goDetail" data-id='{{item.id}}'>
+        <view class="goodsTop">
+          <image src="{{item.pic}}"></image>
+
+        </view>
+        <view class="goodsBot">
+          <text>{{item.name}}</text>
+          <text>￥{{item.minPrice}}</text>
+          <view>
+            <text>已售{{item.numberSells}}件</text>
+            <text>评价0分</text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+</view>

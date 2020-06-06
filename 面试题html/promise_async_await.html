@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    async function fn() {
+        var n = await http();
+        console.log(n)
+    }
+
+
+    function http() {
+        var n = 0;
+        var p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                n = 20;
+                resolve(n)
+
+            }, 1000)
+        })
+        return p;
+    }
+
+    fn()
+
+
+
+</script>

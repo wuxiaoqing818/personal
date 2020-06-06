@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="home">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" id="wxqSwiper" indicator-active-color="white">
+      <block wx:for-items="{{bannerList}}">
+        <swiper-item>
+          <image src="{{item.picUrl}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="search">
+      <input placeholder="请输入关键字" bindconfirm='goSearch' confirm-type="search" value="{{searchName}}">
+      <image src="/images/search.png"></image>
+      </input>
+
+    </view>
+  </view>
+
+  <view class="nav">
+    <image src="/images/home_05.jpg"></image>
+    <!-- <text wx:for-items="{{noticeList}}">{{item.title}}</text> -->
+    <swiper class="swiper" autoplay="true" interval="5000" duration="500" circular="true" indicator-active-color="white" vertical="true">
+      <block wx:for-items="{{noticeList}}">
+        <swiper-item>
+          <text>{{item.title}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <text>更多 ></text>
+
+  </view>
+  <!-- 分类 -->
+  <view class="goods">
+    <view wx:for-items="{{sortList}}" wx:if="{{item.type=='分类'}}" bindtap="sortSearch" data-name="{{item.name}}">
+      <image src="{{item.icon}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+
+  <view class="hot">
+    <view class="title">
+      <view></view>
+      <text>爆品推荐</text>
+      <view></view>
+    </view>
+
+    <view class="hotGoods">
+      <view wx:for-items="{{list}}" wx:if="{{item.recommendStatus==1}}" bindtap="goDetail" data-id='{{item.id}}'>
+        <image src="{{item.pic}}"></image>
+        <view>
+          <text>{{item.name}}</text>
+          <view>
+            <text>{{item.minPrice}}</text>
+            <text>{{item.originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class="bg">
+    <image src="/images/home1_09.jpg"></image>
+  </view>
+
+  <view class="cut">
+    <view class="cutTop">
+      <text>疯狂砍价</text>
+    </view>
+    <view class="cutBot" wx:for-items="{{cutList}}" wx:if="{{item.categoryId==88516}}" bindtap="goCut" data-id='{{item.id}}'>
+      <view class="cutBotTop">
+        <image src="/images/home3.jpg"></image>
+      </view>
+
+      <view class="cutBotBot">
+        <text>{{item.name}}</text>
+        <text>哈哈啊哈哈</text>
+        <view>
+          <text>原价:{{item.originalPrice}}</text>
+          <text>底价:{{item.minPrice}}</text>
+          <button>砍价</button>
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class="group">
+    <view class="title">
+      <view></view>
+      <text>全民拼团</text>
+      <view></view>
+    </view>
+    <view class="groupBot">
+      <view wx:for-items="{{groupList}}" wx:if="{{item.categoryId==88517}}" bindtap="goGroup" data-id='{{item.id}}'>
+        <image src="{{item.pic}}"></image>
+        <text>{{item.name}}</text>
+        <text>我爱你中国</text>
+        <view>
+          <text>￥{{item.originalPrice}}</text>
+          <text>￥{{item.minPrice}}</text>
+          <button>拼团</button>
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goodsList">
+    <view class="title">
+      <view></view>
+      <text>商品列表</text>
+      <view></view>
+    </view>
+
+    <view class="hotGoods">
+      <view wx:for-items="{{list}}" wx:if="{{item.categoryId!=88491&item.categoryId!=88516&item.categoryId!=88517}}" bindtap="goDetail" data-id='{{item.id}}'>
+        <image src="{{item.pic}}"></image>
+        <view>
+          <text>{{item.name}}</text>
+          <view>
+            <text>{{item.minPrice}}</text>
+            <text>{{item.originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+
+
+
+    </view>
+  </view>
+  <view class="footer" wx:if="{{footer}}">{{footer}}</view>
+
+
+</view>

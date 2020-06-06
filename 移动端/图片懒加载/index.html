@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			.gallery {
+				text-align: center;
+			}
+			img {
+				width: 200px;
+				height: 200px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="gallery">
+			<!-- img[src="images/home_09.jpg" data-src="images/home$.jpg"]*20      快捷方式 -->
+			<img src="images/home_09.jpg" alt="" data-src="images/home1.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home2.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home3.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home4.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home5.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home6.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home7.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home8.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home9.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home10.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home11.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home12.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home13.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home14.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home15.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home16.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home17.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home18.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home19.jpg">
+			<img src="images/home_09.jpg" alt="" data-src="images/home20.jpg">
+
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript">
+	$(window).scroll(handleScroll)
+	function handleScroll() {
+		let imgs=$("img[data-src]");
+		let bodyScrollHeight = document.body.scrollTop || document.documentElement.scrollTop;
+		let windowHeight = window.innerHeight;
+		for(let i=0;i<imgs.length;i++) {
+			let imgHeight = $(imgs[i]).offset().top
+			console.log(bodyScrollHeight,windowHeight)
+			if(imgHeight<windowHeight+bodyScrollHeight&& imgHeight>=bodyScrollHeight) {
+				setTimeout(function(){
+					$(imgs).eq(i).attr("src",$(imgs).eq(i).attr("data-src"))
+				},1000)
+			}
+		}
+	}
+	handleScroll()
+
+</script>

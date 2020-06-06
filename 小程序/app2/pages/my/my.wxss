@@ -1,0 +1,163 @@
+/* pages/my/my.wxss */
+
+.my {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  background: #eee;
+}
+
+.myLogin {
+  background: white;
+  padding-bottom: 40rpx;
+}
+
+.myLogin image {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+}
+
+.myLogin button {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  min-height: 0;
+  background: white;
+  border: 2rpx solid;
+  font-size: 26rpx;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.myLogin button:not([size='mini']) {
+  width: 200rpx;
+  height: 60rpx;
+  border: none;
+  padding: 0;
+  background: white;
+  margin: 0 auto;
+}
+
+.myLogin view {
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.information {
+  display: flex;
+  border-top: 2rpx solid #eee;
+  padding: 14rpx;
+  margin-bottom: 20rpx;
+  background: white;
+}
+
+.information>view {
+  text-align: center;
+  width: 33.33%;
+}
+
+.information text {
+  display: block;
+}
+
+.information>view:nth-of-type(2) {
+  border-left: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+}
+
+.order {
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+.common {
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eee;
+  background: white;
+  align-items: center;
+  height: 60rpx;
+}
+
+.common image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.my .commom2 {
+  margin-bottom: 20rpx;
+  border: none;
+}
+
+.orderBot {
+  display: flex;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.orderBot image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.orderBot>view {
+  width: 20%;
+}
+
+.orderBot text {
+  display: block;
+}
+
+#phone button {
+  width: 160rpx;
+  min-height: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: green;
+  color: white;
+  font-weight: normal;
+  font-size: 24rpx;
+  margin: 0;
+  padding: 0;
+}
+
+#phone  button:not([size='mini']) {
+  width: 160rpx;
+  height: 60rpx;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: green;
+}
+
+.quitLogin button {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  font-weight: normal;
+  background: white;
+}
+
+.quitLogin  button:not([size='mini']) {
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.quitLogin .button-hover {
+  color: black;
+  background: white;
+}

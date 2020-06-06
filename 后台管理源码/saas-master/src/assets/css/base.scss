@@ -1,0 +1,69 @@
+.flex_row{
+  display: flex;
+  flex-direction: row;
+}
+.flex_column{
+  display: flex;
+  flex-direction: column;
+}
+.flex_column_center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex_row_center{
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+//顶部切换tab样式
+.appo_submenu{
+  background-color: #fff;
+  width: 100%;
+  height: 80px;
+  font-size: 16px;
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  .tabs{
+    flex:1;
+    span{
+      display: inline-block;
+      color: #9B9B9B;
+      height: 80px;
+      line-height: 80px;
+      font-size: 16px;
+      margin-left:20px;
+      cursor: pointer;
+    }
+    .router-link-active{
+      box-sizing: border-box;
+      color: #E22C37;
+      border-bottom:2px solid #E22C37;
+    }
+  }
+  .add_appo{
+    button{
+      width:140px;
+      height:40px;
+      border:none;
+      background:#E22C37;
+      color:#fff;
+      font-size:16px;
+      outline:none;
+      border-radius:2px;
+      margin:20px 34px 0 0;
+      cursor: pointer;
+      img{
+        width:24px;
+        height:24px;
+        margin-left:12px;
+        vertical-align:middle;
+      }
+    }
+  }
+}
+

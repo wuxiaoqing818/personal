@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const url = "http://www.nowcoder.com/path/to/page?key=1&key=2&key=3&test=4#hehe";
+
+    // console.log( url.split("?")[1].split('&'))
+    // console.log( url.split("?")[1].split('&')[2].split("="))
+    // console.log( url.split("?")[1].split('&')[3].split("#")[0].split("="))
+    // let obj = {};
+    // obj[url.split("?")[1].split('&')[2].split("=")[0]] = url.split("?")[1].split('&')[2].split("=")[1]
+    // obj[url.split("?")[1].split('&')[3].split("#")[0].split("=")[0]] = url.split("?")[1].split('&')[3].split("#")[0].split("=")[1]
+    // console.log(obj)
+
+    // let value1 = url.split("?")[1].split('&')[2].split("=");
+    // let value2 = url.split("?")[1].split('&')[3].split("#")[0].split("=")
+    // let obj = {};
+    // obj[value1[0]] = value1[1]
+    // obj[value2[0]] = value2[1]
+    // console.log(obj)
+
+    function fn() {
+        let num = 0;
+        function fn2() {
+            num++
+
+            if (num % 2 != 0) {
+                console.log(1)
+            } else {
+                console.log(2)
+            }
+
+        }
+        return fn2
+    }
+    let f = fn();
+    f()
+    f()
+    f()
+
+
+</script>

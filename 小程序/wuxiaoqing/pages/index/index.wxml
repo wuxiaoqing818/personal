@@ -1,0 +1,106 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="card">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" id="wxqSwiper" indicator-active-color="white">
+      <block>
+        <swiper-item>
+          <image src="/images/home_02.jpg"></image>
+        </swiper-item>
+      </block>
+      <block>
+        <swiper-item>
+          <image src="/images/project_img1.jpg"></image>
+        </swiper-item>
+      </block>
+      <block>
+        <swiper-item>
+          <image src="/images/project_img2.jpg"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <view class="information">
+    <text>吴晓晴</text>
+    <view>
+      <text>手机</text>
+      <view>
+        <text>17639263196</text>
+        <button bindtap="call">拨打</button>
+      </view>
+    </view>
+    <view>
+      <text>邮箱</text>
+      <view>
+        <text>wuxiaoqing_818@163.com</text>
+        <button bindtap='emailPaste'>复制</button>
+      </view>
+    </view>
+    <view>
+      <text>职业</text>
+      <view>
+        <text>全栈开发</text>
+        <button bindtap='workPaste'>复制</button>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="behavior">
+    <view bindtap='gotoSubmit'>
+      <image src="/images/save_banner.jpg"></image>
+      <text>生成海报</text>
+
+    </view>
+    <view bindtap="savePhone">
+      <image src="/images/save_phone.jpg"></image>
+      <text>保存电话</text>
+
+    </view>
+
+    <view>
+      <button id="shareBtn" open-type="share" type="primary">
+        <image src="/images/share.jpg"></image>
+        <text>分享好友</text>
+      </button>
+
+    </view>
+
+
+  </view>
+  <view class="wxqLogo">
+    <image src="/images/wxq_logo.png"></image>
+  </view>
+
+  <!-- 弹框 -->
+  <view class='tankuang2' wx:if="{{showhaibao}}">
+   
+    <view class='container1' bindtap="previewImg">
+      <image style="width:100%;height:80%" src="{{imagePath}}"></image>
+    </view>
+      <view class="cancel" bindtap="cancelBanner">
+      <image src="/images/cancel.png" style="width:80rpx;height:80rpx"></image>
+    </view>
+  </view>
+  <canvas style="width:{{windowW}}px;height:{{windowH}}px;position:fixed;top:9999px;display:{{maskHidden?'none':''}}" canvas-id="mycanvas" />
+
+
+
+
+
+
+
+</view>

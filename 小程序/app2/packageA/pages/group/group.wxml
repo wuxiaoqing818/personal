@@ -1,0 +1,80 @@
+<!--pages/group/group.wxml-->
+<view class="group" wx:if="{{goodsDetail.basicInfo.categoryId==88517}}">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" id="wxqSwiper" indicator-active-color="white">
+      <block wx:for-items="{{goodsDetail.pics}}">
+        <swiper-item>
+          <image src="{{item.pic}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <view class="produce">
+    <text>{{goodsDetail.basicInfo.name}}</text>
+    <text>分享有赏，好友下单后可得5元 现金奖励</text>
+    <view>
+      <view class="produceTop">
+        <text>￥{{goodsDetail.basicInfo.minPrice}}</text>
+        <text>{{goodsDetail.basicInfo.numberSells}}人已买</text>
+      </view>
+      <view class="produceBot">
+        <image src="/images/relay.png"></image>
+        <image src="/images/share.png"></image>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class="cutSet">
+    <text>商品拼团设置</text>
+    <view class="content">
+      <view>
+        <text>已成团</text>
+        <text>{{goodsDetail.basicInfo.stores}}</text>
+      </view>
+      <view>
+        <text>成团人数</text>
+        <text>{{goodsDetail.basicInfo.numberSells}}</text>
+      </view>
+      <view>
+        <text>退款条件</text>
+        <text>8小时未成团</text>
+      </view>
+      <view>
+        <text>截至</text>
+        <text>{{goodsDetail.basicInfo.minPrice}}</text>
+      </view>
+      <view>
+        <text>截至</text>
+        <text>没有</text>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="footer">
+    <view class="fo1">
+      <view>
+        <image src="/images/customer_service.png"></image>
+        <text>客服</text>
+      </view>
+      <view>
+        <image src="/images/cart_img.png"></image>
+        <text>购物车</text>
+        <text>(2)</text>
+      </view>
+
+    </view>
+    <view class="fo2">
+      <button>单独购买</button>
+    </view>
+    <view class="fo3">
+      <button>发起拼团</button>
+    </view>
+
+  </view>
+</view>

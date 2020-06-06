@@ -1,0 +1,88 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "type":"黄老师课堂",
+            "img":"clock.png",
+            "time": "10月25日 08:00~12月14日 20:00",
+            "ll":"黄杰峰",
+            "img2":"avatar2.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"100.00",
+            "people":4,
+            "price":"免费",
+            "ch":false,
+            "ci":false
+        },
+        {
+            "id": 2,
+            "type":"沈老师课堂 (陈同学)",
+            "img":"clock.png",
+            "time": "10月25日 17:00~12月14日 22:00",
+            "ll":"绳华侨",
+            "img2":"avatar.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"100.00",
+            "people":2,
+            "price":"免费",
+            "ch":false,
+            "ci":false
+        },
+        {
+            "id": 3,
+            "type":"初中数学自主招生专题",
+            "img":"clock.png",
+            "time": "12月13日 14:10~12月13日 20:30",
+            "ll":"D5殷老师",
+            "img2":"avatar2.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"100.00",
+            "people":13,
+            "price":"免费",
+            "ch":false,
+            "ci":true
+        },
+        {
+            "id": 3,
+            "type":"初一化学习题课",
+            "img":"clock.png",
+            "time": "12月12日 19:00~12月12日 20:00",
+            "ll":"D5殷老师",
+            "img2":"avatar2.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"10.00",
+            "people":1,
+            "price":"免费",
+            "ch":false,
+            "ci":false
+        },
+        {
+            "id": 3,
+            "type":"初中数学自主招生专题",
+            "img":"clock.png",
+            "time": "12月12日 19:00~12月12日 20:00",
+            "ll":"D5殷老师",
+            "img2":"avatar2.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"10.00",
+            "people":6,
+            "price":"免费",
+            "ch":false,
+            "ci":true
+        },
+        {
+            "id": 3,
+            "type":"自主招生冲刺讲座",
+            "img":"clock.png",
+            "time": "",
+            "ll":"杨德胜",
+            "img2":"avatar2.jpg",
+            "img3":"lzd_1n.gif",
+            "bb":"10.00",
+            "people":6,
+            "price":"免费",
+            "ch":false,
+            "ci":true
+        }
+    ]
+}

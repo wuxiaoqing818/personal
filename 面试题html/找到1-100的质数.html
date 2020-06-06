@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    //  质数 除了1和它自己本身不能被其他数整除的数字  3  5   7   11  13   23    
+    var arr = [];
+    for (var i = 2; i <= 100; i++) {   //  i=5   
+        //    i 和所有 比自己小的数字进行 除  看结果 有没有余数  没有余数  不是质数
+        var bool = true;
+        for (var j = i - 1; j > 1; j--) {
+            if (i % j == 0) {  //  5 % 5  4   3    2   
+                bool = false
+            }
+
+        }
+        if (bool) {// bool 为true 证明 i这个数组 % 比这个数本身小的所有数   都不等于0   那么它是质数
+            arr.push(i);
+        }
+    }
+
+    console.log(arr);
+</script>

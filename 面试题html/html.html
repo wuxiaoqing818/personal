@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+// if (true) {
+// 　tmp = 'abc'; // ReferenceError
+// 　 console.log(tmp); // ReferenceError
+// 　let tmp; // TDZ结束
+// 　console.log(tmp); // undefined
+// 　 tmp = 123;
+// 　console.log(tmp); // 123
+// }
+
+function * fids() {
+let a = 1;
+let b = 2;
+while (true) {
+yield a;
+[a, b] = [b, a + b];
+   }
+}
+// let [first,second,third,fourth,fifth,sixth] = fids()
+// console.log(first,second,third,fourth,fifth,sixth)
+var c = fids();
+console.log(c.next().value)
+console.log(c.next().value)
+console.log(c.next().value)
+console.log(c.next().value)
+console.log(c.next().value)
+console.log(c.next().value)
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

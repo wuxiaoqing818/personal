@@ -1,0 +1,17 @@
+import axios from 'axios'
+import {baseUrl} from './env'
+
+axios.defaults.baseURL = baseUrl
+axios.defaults.headers = {
+  'Content-Type': 'application/json;charset=utf-8',
+  'Access-Control-Allow-Methods': 'GET, POST',
+  'Access-Control-Allow-Origin': '*'
+}
+
+axios.interceptors.response.use(function (config) {
+  return config
+}, function (error) {
+  return Promise.reject(error)
+})
+
+export default axios

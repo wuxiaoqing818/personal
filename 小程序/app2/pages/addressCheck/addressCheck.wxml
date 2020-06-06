@@ -1,0 +1,29 @@
+<!--pages/addressCheck/addressCheck.wxml-->
+<view class="addressCheck">
+
+  <view class="content">
+    <view class="address" wx:for-items="{{list}}" bindtap="pickAddress" data-item="{{item}}">
+      <view>
+        <image src="{{item.isDefault?'/images/addressCheck.png':''}}"></image>
+        <view>
+          <text decode="{{true}}">{{item.linkMan}}&nbsp;&nbsp;{{item.mobile}}</text>
+          <text>{{item.address}}</text>
+        </view>
+      </view>
+
+      <image src="/images/addressWrite.png" catchtap="changeAddress" data-id="{{item.id}}"></image>
+
+    </view>
+  </view>
+
+
+  <view class="footer" bindtap="addressAdd">
+    <view>
+      <image src="/images/addressAdd.png"></image>
+      <text>新增收货地址</text>
+    </view>
+
+    <image src="/images/jiantou.png"></image>
+  </view>
+
+</view>

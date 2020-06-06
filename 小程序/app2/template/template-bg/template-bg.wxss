@@ -1,0 +1,30 @@
+.templateBg {
+  display: flex;
+  flex-direction: column;
+  padding-top: 200rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.templateBg image {
+  width: 100rpx;
+  height: 100rpx;
+  margin:  0 auto;
+}
+
+.templateBg view {
+  color: #ccc;
+  padding: 40rpx;
+}
+
+.templateBg button {
+  min-height: 0;
+  padding: 0;
+  background: orangered;
+  color: white;
+  font-size: 30rpx;
+  height: 80rpx;
+  width: 300rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+}

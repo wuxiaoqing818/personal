@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //对象：特指的某个事物，具有属性和方法（一组无序的属性的集合）
+        //特性---》属性
+        //行为---》方法
+        //创建对象三种方式
+        /***
+         *  1 字面量的方式
+         *  2.调用系统的构造函数
+         *  3.自定义构造函数方式
+         *　4.工厂模式创建对象
+         * */
+        //1.实例对象
+        var per1 = {
+            name: "卡卡",
+            age: 20,
+            sex: "男",
+            eat: function () {
+                console.log("吃臭豆腐");
+            },
+            readBook: function () {
+                console.log("一步之遥");
+            }
+        }
+        //2.调用系统的构造函数
+        var per2 = new Object();
+        per2.name = "大蛇丸";
+        per2.age = 30;
+        per2.sex = "男";
+        per2.eat = function () {
+            console.log("要吃榴莲");
+        };
+        per2.play = function () {
+            console.log("爱玩小蛇");
+        };
+
+        console.log(per2 instanceof Object);
+        //var dog=new Object();
+        //3.自定义构造函数
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.play = function () {
+                console.log("打王者荣耀");
+            };
+        }
+        var per = new Person("妲己", 18, "女");
+        /**
+         * 1.开辟空间存储对象
+         * 2.把this设置为当前的对象
+         * */
+        console.log(per instanceof Person);
+        //4.工厂模式创建对象
+        function creatObject(name, age, sex) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sex = sex;
+            obj.sayHi = function () {
+                console.log("您好");
+            };
+            return obj;
+        }
+        var per_factory = creatObject("剑圣", 20, "男")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

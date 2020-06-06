@@ -1,0 +1,111 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+  <view class="myLogin">
+    <image src="{{isLogin?userInfo.avatarUrl:'/images/person.png' }}"></image>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{!isLogin}}">点击登录账户</button>
+    <view wx:if="{{isLogin}}">{{userInfo.nick}}</view>
+  </view>
+  <view class="information">
+    <view>
+      <text>0</text>
+      <text>余额</text>
+    </view>
+    <view>
+      <text>0</text>
+      <text>冻结</text>
+    </view>
+    <view>
+      <text>0</text>
+      <text>积分</text>
+    </view>
+  </view>
+
+  <view class="order">
+    <view class="orderTop common" bindtap="goOrder">
+      <text>我的订单</text>
+      <image src="/images/jiantou.png"></image>
+    </view>
+    <view class="orderBot">
+      <view bindtap="goOrder">
+        <image src="/images/waitPay.png"></image>
+        <text>待付款</text>
+      </view>
+      <view bindtap="goOrder">
+        <image src="/images/send.png"></image>
+        <text>待发货</text>
+      </view>
+      <view bindtap="goOrder">
+        <image src="/images/receive.png"></image>
+        <text>待收获</text>
+      </view>
+      <view bindtap="goOrder">
+        <image src="/images/evaluate.png"></image>
+        <text>待评价</text>
+      </view>
+      <view bindtap="goOrder">
+        <image src="/images/afterSale.png"></image>
+        <text>退款/售后</text>
+      </view>
+    </view>
+  </view>
+  <view class="common commom2">
+    <text>成为分销商</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>申请开票</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common  commom2">
+    <text>开票记录</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>优惠买单</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>资金明细</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>每日签到</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>积分兑换</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common" bindtap="goAddress">
+    <text>收货地址</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common  commom2">
+    <text>领券中心</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common">
+    <text>关于我们</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common" id="phone">
+    <text>绑定手机</text>
+    <button>立即绑定</button>
+  </view>
+  <view class="common commom2" bindtap="quitLogin" wx:if="{{isLogin}}">
+    <text>退出登录</text>
+    <image src="/images/jiantou.png"></image>
+  </view>
+  <view class="common commom2 quitLogin" wx:if="{{!isLogin}}">
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <text>授权登录</text>
+      <image src="/images/jiantou.png"></image>
+    </button>
+
+  </view>
+
+
+
+
+
+</view>

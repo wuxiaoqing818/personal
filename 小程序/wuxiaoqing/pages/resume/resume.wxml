@@ -1,0 +1,63 @@
+<!--pages/resume/resume.wxml-->
+<view class="resume">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" id="wxqSwiper" indicator-active-color="white">
+      <block>
+        <swiper-item>
+          <image src="/images/home_02.jpg"></image>
+        </swiper-item>
+      </block>
+      <block>
+        <swiper-item>
+          <image src="/images/project_img1.jpg"></image>
+        </swiper-item>
+      </block>
+      <block>
+        <swiper-item>
+          <image src="/images/project_img2.jpg"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="experience">
+    <view class="content">
+      <text>工作经历</text>
+      <view>
+        <view class="title">
+          <text>2018.07-2020.02</text>
+          <view>北京觉烁科技有限公司</view>
+          <view></view>
+        </view>
+      </view>
+      <view>
+        <view class="title">
+          <text>2017.6-2018.6</text>
+          <view>北京嬴美时代科技有限公司</view>
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <text>教育经历</text>
+      <view>
+        <view class="title">
+          <text>2019.10-2022.03</text>
+          <view>南开大学</view>
+          <view></view>
+        </view>
+      </view>
+      <view>
+        <view class="title">
+          <text>2015.09-2018.06</text>
+          <view>河南工贸学院</view>
+          <view></view>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+</view>

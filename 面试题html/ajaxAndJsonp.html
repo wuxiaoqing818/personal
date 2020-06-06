@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <h3>jsonp接口测试</h3>
+    <input type="text" id="ca">
+    <button id="btn" onclick="BtnJsonp()">模拟jsonp请求</button>
+</body>
+
+<script>
+
+    //普通的ajax请求不支持跨域  会遵守同源策略  被阻止
+    function BtnJsonp() {
+        var card = document.getElementById("ca").value;
+        console.log(card)
+
+        $.ajax({
+            type: "get",
+            async: true,
+            url: "https://api.asilu.com/idcard/",
+            // url: "http://49.4.11.53:8094/back/home/comment/list?pageCurrent=1&Size=10",
+            data: {
+                id: card
+
+            },
+
+            success: function (data) {
+                var str = JSON.stringify(data);
+                console.log(str);
+                alert(str);
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+
+
+
+
+    // 利用jsonp跨域请求  可以解决ajax的跨域问题
+    // function BtnJsonp() {
+    //     var card = document.getElementById("ca").value;
+    //     console.log(card)
+
+    //     $.ajax({
+    //         type: "get",
+    //         async: true,
+    //         // url: "https://api.asilu.com/geo/",
+    //         url: "https://api.asilu.com/idcard/",
+    //         dataType: "jsonp",
+    //         data: {
+    //             id: card
+
+    //         },
+
+    //         jsonpCallback: "jsonpCallback",
+    //         success: function (data) {
+    //             var str = JSON.stringify(data);
+    //             console.log(str);
+    //             alert(str);
+    //         },
+    //         error: function (e) {
+    //             alert("error");
+    //         }
+    //     });
+    // }
+
+
+
+
+    //指定jsonp名称  和callback名称   可以在ajax外部写回调函数
+    // function BtnJsonp() {
+    //     var card = document.getElementById("ca").value;
+    //     console.log(card)
+
+    //     $.ajax({
+    //         type: "get",
+    //         async: true,
+    //         // url: "https://api.asilu.com/geo/",
+    //         url: "https://api.asilu.com/idcard/",
+    //         dataType: "jsonp",
+    //         data: {
+    //             id: card
+
+    //         },
+
+    //         // jsonp: "wxq",  //在这里指定会报错  默认的jsopn名字callback不会报错   jsonp名字会在url地址栏显示  传给后台  后台可将数据作为参数返回
+    //         jsonpCallback: 'successCallback',
+    //     });
+    // }
+
+    // function successCallback(data) {
+    //     console.log(data)
+    // }
+
+
+
+
+    //jsonp 只支持get 不支持post等
+    // function BtnJsonp() {
+    //     var card = document.getElementById("ca").value;
+    //     console.log(card)
+
+    //     $.ajax({
+    //         type: "post",
+    //         async: true,
+    //         // url: "https://api.asilu.com/geo/",
+    //         url: "https://test.365msmk.com/api/app/courseChapter",
+    //         dataType: "jsonp",
+    //         data: {
+    //             id: 3       //随便写的  不影响
+
+    //         },
+
+    //         jsonpCallback: "jsonpCallback",
+    //         success: function (data) {
+    //             var str = JSON.stringify(data);
+    //             console.log(str);
+    //             alert(str);
+    //         },
+    //         error: function (e) {
+    //             alert("error");
+    //         }
+    //     });
+    // }
+
+
+
+</script>
+
+</html>

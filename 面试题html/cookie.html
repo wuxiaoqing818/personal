@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="姓名" id="name"><br>
+    <input type="text" placeholder="密码" id="password"><br>
+    <button onclick="login()">登录</button>
+
+</body>
+
+</html>
+<script>
+    function login() {
+        var userName = document.getElementById('name').value;
+        var userPassword = document.getElementById('password').value;
+        alert(userName)
+        var date = new Date()
+        // date.setSeconds(date.getSeconds() + 50)
+        date.setDate(date.getDate() + 7)
+        document.cookie = "name=123; expires=" + date.toGMTString()
+
+    }
+
+    var foo = 1;
+    function bar() {
+        foo = 10;
+        return;
+        function foo() { }
+    }
+    bar();
+    console.log(foo);
+
+    // var foo = 1;
+    // function bar() {
+    //     function foo() { }
+    //     foo = 10;
+    //     return;
+    // }
+    // bar();
+    // console.log(foo);
+    console.log(window.location.href)
+
+</script>

@@ -1,0 +1,152 @@
+/* pages/group/group.wxss */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  background: #eee;
+  font-size: 26rpx;
+}
+
+#wxqSwiper {
+  height: 700rpx;
+}
+
+#wxqSwiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.produce {
+  padding: 20rpx;
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+.produce>text:last-of-type {
+  color: red;
+  display: block;
+  padding-top: 20rpx;
+}
+
+.produce>view {
+  padding-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produceTop>text:nth-of-type(1) {
+  color: red;
+  font-size: 34rpx;
+  margin-right: 20rpx;
+}
+
+.produceTop>text:last-of-type {
+  color: #ccc;
+  margin-right: 20rpx;
+}
+
+.produceBot>image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}
+
+.cutSet>text {
+  padding-left: 20rpx;
+}
+
+.content {
+  background: white;
+  padding-left: 20rpx;
+}
+
+.content>view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.content>view>text:last-of-type {
+  padding-right: 20rpx;
+  color: #ccc;
+}
+
+.footer {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  box-shadow: 0 0 30rpx 0 rgba(0, 0, 0, 0.5);
+}
+
+.footer>view {
+  width: 33.3%;
+}
+
+.fo1 {
+  display: flex;
+  font-size: 20rpx;
+  background: white;
+}
+
+.fo1>view {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.fo1>view>text {
+  display: block;
+}
+
+.fo1>view:nth-of-type(1)>text {
+  color: greenyellow;
+}
+
+.fo1>view:nth-of-type(2)>text {
+  color: #ccc;
+}
+
+.fo1>view:nth-of-type(2) {
+  position: relative;
+}
+
+.fo1>view:nth-of-type(2)>text:last-of-type {
+  color: red;
+  position: absolute;
+  top: 6rpx;
+  right: 20rpx;
+}
+
+.fo1 image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.footer button {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fo2 button {
+  background: pink;
+}
+
+.fo3 button {
+  background: orangered;
+}

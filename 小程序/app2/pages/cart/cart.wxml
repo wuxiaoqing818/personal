@@ -1,0 +1,36 @@
+<!--pages/cart/cart.wxml-->
+<import src="/template/template-bg/template-bg.wxml" />
+<import src="/template/template-cart/template-cart.wxml" />
+<!-- <view class="cart">
+  <view class="goods">
+    <view class="goodsContent {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for-items="{{list.items}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+      <view class="item">
+        <view class="goodsTop">
+          <image src="{{item.pic}}"></image>
+        </view>
+        <view class="goodsBot">
+          <text>{{item.name}}</text>
+          <text wx:for-items="{{item.sku}}" decode="{{true}}">{{item.optionValueName}}&nbsp;&nbsp;</text>
+          <text>￥{{item.price}}</text>
+          <view>
+            <text bindtap="cut" data-key="{{item.key}}" data-num="{{item.number}}" data-index="{{index}}">-</text>
+            <input value="{{item.number}}"></input>
+            <text bindtap="plus" data-key="{{item.key}}" data-num="{{item.number}}" data-index="{{index}}">+</text>
+
+          </view>
+        </view>
+      </view>
+      <view class="remove" data-key="{{item.key}}" data-index="{{index}}" data-num="{{item.number}}" data-price="{{item.price}}" bindtap="remove">{{remove}}删除</view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="foTop">
+      <text>合计：￥{{list.price}} + 0 积分</text>
+    </view>
+    <view class="foBot">
+      <button>去结算</button>
+    </view>
+  </view>
+</view> -->
+<!-- <template is="template-bg" /> -->
+<template is="{{list.items?'template-cart':'template-bg'}}" data="{{list}}" />

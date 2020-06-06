@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var arr = [10, 9, 8, 7, 6, 5]
+    for (var j = 0; j < arr.length - 1; j++) {
+        for (var i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                var b;
+                b = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = b
+            }
+        }
+    }
+
+    console.log(arr)
+
+</script>

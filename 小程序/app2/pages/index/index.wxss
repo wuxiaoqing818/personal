@@ -1,0 +1,360 @@
+
+/**index.wxss**/
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  background: #eee;
+}
+
+.groupBot button:not([size='mini']) {
+  width: 100rpx;
+  height: 50rpx;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cutBotBot  button:not([size='mini']) {
+  width: 100rpx;
+  height: 50rpx;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  position: relative;
+}
+
+#wxqSwiper image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.search {
+  width: 100%;
+  position: absolute;
+  top: 36rpx;
+  left: 30rpx;
+}
+
+.search input {
+  position: relative;
+  width: 82%;
+  height: 70rpx;
+  padding: 0 40rpx;
+  border-radius: 40rpx;
+  background: white;
+  color: #ccc;
+  border: 1px solid;
+}
+
+.search image {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  right: 40rpx;
+  top: 10rpx;
+}
+
+.nav {
+  height: 90rpx;
+  padding: 0 20rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.nav image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.nav>.swiper text {
+  font-size: 26rpx;
+  color: red;
+}
+
+.nav>text {
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.nav>.swiper {
+  width: 80%;
+  height: 100%;
+}
+
+.nav swiper-item {
+  display: flex;
+  align-items: center;
+}
+
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30rpx;
+  padding: 50rpx 0 0 0;
+  background: white;
+}
+
+.goods view {
+  width: 20%;
+  text-align: center;
+}
+
+.goods image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.goods text {
+  display: block;
+  padding: 10rpx 6rpx 50rpx 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #ccc;
+  padding: 0 0 40rpx 17%;
+  background: white;
+}
+
+.title view {
+  width: 160rpx;
+  height: 4rpx;
+  background: #ccc;
+}
+
+.title text {
+  padding: 0 20rpx;
+}
+
+.hotGoods {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx 26rpx 20rpx;
+}
+
+.hotGoods>view {
+  width: 48%;
+  background: white;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.hotGoods>view>image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.hotGoods>view>view>text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hotGoods>view>view {
+  padding: 20rpx 20rpx 10rpx;
+}
+
+.hotGoods>view>view>view {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20rpx;
+}
+
+.hotGoods>view>view>view>text:nth-of-type(1) {
+  color: red;
+}
+
+.hotGoods>view>view>view>text:nth-of-type(2) {
+  color: #ccc;
+  text-decoration: line-through;
+  margin-right: 40rpx;
+}
+
+.bg {
+  padding-bottom: 10rpx;
+  background: white;
+}
+
+.bg image {
+  width: 100%;
+  height: 260rpx;
+}
+
+.cut {
+  padding: 0 26rpx;
+  border: 2rpx solid #ccc;
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+.cutTop {
+  padding: 30rpx 0;
+  font-weight: bold;
+  border-bottom: 2rpx solid #ccc;
+  font-size: 28rpx;
+}
+
+.cutBot {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0 40rpx 0;
+}
+
+.cutBotTop {
+  width: 20%;
+  padding-top: 40rpx;
+}
+
+.cutBot>view>image {
+  width: 100%;
+  height: 120rpx;
+}
+
+.cutBotBot {
+  width: 80%;
+  padding: 0 40rpx 0 26rpx;
+}
+
+.cutBotBot>text {
+  display: block;
+}
+
+.cutBotBot>text:nth-of-type(1) {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.cutBotBot>text:nth-of-type(2) {
+  font-size: 28rpx;
+  color: #ccc;
+}
+
+.cutBotBot>view {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+  align-items: center;
+}
+
+.cutBotBot>view>text:nth-of-type(2) {
+  color: red;
+  margin-left: -180rpx;
+}
+
+.cutBotBot button {
+  padding: 0;
+  min-height: 0;
+  width: 100rpx;
+  height: 50rpx;
+  background: orangered;
+  color: white;
+  font-size: 20rpx;
+  line-height: 50rpx;
+  margin: 0;
+}
+
+.group .title {
+  padding-top: 40rpx;
+}
+
+.groupBot {
+  padding: 26rpx 20rpx 20rpx;
+}
+
+.groupBot>view {
+  background: white;
+}
+
+.groupBot>view>image {
+  width: 100%;
+  height: 260rpx;
+  margin-bottom: 20rpx;
+}
+
+.groupBot>view>text {
+  display: block;
+  font-size: 32rpx;
+  padding: 2rpx 20rpx;
+}
+
+.groupBot>view>text:last-of-type {
+  font-size: 28rpx;
+  color: #ccc;
+}
+
+.groupBot>view>view {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx 0 20rpx;
+  align-items: center;
+}
+
+.groupBot>view>view>text:nth-of-type(1) {
+  color: red;
+  font-size: 34rpx;
+}
+
+.groupBot>view>view>text:nth-of-type(2) {
+  color: #ccc;
+  margin-left: -360rpx;
+  font-size: 26rpx;
+  text-decoration: line-through;
+}
+
+.groupBot button {
+  padding: 0;
+  min-height: 0;
+  width: 100rpx;
+  height: 50rpx;
+  background: orangered;
+  color: white;
+  font-size: 20rpx;
+  line-height: 50rpx;
+  margin: 0;
+  margin-bottom: 20rpx;
+}
+
+.goodsList .title {
+  padding-top: 40rpx;
+}
+
+.footer {
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}

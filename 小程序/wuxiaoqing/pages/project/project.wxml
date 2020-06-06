@@ -1,0 +1,15 @@
+<!--pages/project/project.wxml-->
+<view class="project">
+  <view class="projectBanner" bindtap="project1">
+    <image src="/images/project_img1.jpg"></image>
+    <view>邻挑细选</view>
+    <text>小程序</text>
+  </view>
+
+  <view class="projectBanner" bindtap="project2">
+    <image src="/images/project_img2.jpg"></image>
+    <view>我柚话说</view>
+    <text>小程序</text>
+  </view>
+
+</view>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // var arr1 = [4, 5, 6, 7]
+    // var arr2 = [1, 2, 3]
+
+
+    // var arr = arr1.concat(arr2)
+    // arr.sort()
+    // console.log(arr)
+    // //判偶 再判奇
+    // if (arr.length % 2 == 0) {
+    //     // return (arr[arr.length/2]+ arr[arr.length/2+1])/2
+    //     alert('111')
+
+    // } else {
+    //     //  return arr[Math.round(arr.length/2)]
+
+    // }
+
+    function fn(a, b) {
+        var arr = a.concat(b)
+        arr.sort()
+        //判偶 再判奇
+        if (arr.length % 2 == 0) {
+            return (arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2
+
+        } else {
+            return arr[parseInt(arr.length / 2)]
+
+        }
+    }
+    alert(fn([4, 5, 6, 7], [1, 2, 3]))
+    alert(fn([4, 5, 6, 7, 8], [1, 2, 3,]))
+
+
+</script>

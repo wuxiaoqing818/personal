@@ -1,0 +1,38 @@
+<!--pages/order/order.wxml-->
+<view class="order">
+  <view class="nav">
+    <text wx:for-items="{{navList}}" data-id="{{item.id}}" class="{{navId==item.id?'textActive':''}}" bindtap="navTap">{{item.name}}</text>
+  </view>
+
+  <view class="waitPay" wx:if="{{navId==0}}">
+    <view class="payBox" wx:for-items="{{orderList}}">
+      <view class="payContent">
+        <view>
+          <view class="payTop">
+            <text>{{index}}</text>
+            <text>待支付 ></text>
+          </view>
+          <view class="payMid">
+            <view>
+              <image wx:for="{{item}}" wx:for-item="goods" src="{{goods.pic}}"></image>
+            </view>
+            <view>
+              <text decode="{{true}}">共&nbsp;{{item[0].allNumber}}&nbsp;件商品&nbsp;&nbsp;合计：</text>
+              <text>￥{{item[0].allPrice}}</text>
+            </view>
+
+          </view>
+          <view class="payBot">
+            <text>2020-02-26 12:36:49</text>
+            <view>
+              <text>马上付款</text>
+              <text bindtap="cancelOrder" data-orderid="{{index}}">取消订单</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer" wx:if="{{footer}}">{{footer}}</view>
+
+</view>

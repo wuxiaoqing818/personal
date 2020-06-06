@@ -1,0 +1,70 @@
+<!--pages/orderConfirm/orderConfirm.wxml-->
+<view class="orderConfirm">
+  <view class="goods">
+    <view>商品列表</view>
+    <view class="goodsDetail" wx:if="{{type=='详情页'}}">
+      <image src="{{goodsDetail.pics[0].pic}}"></image>
+      <view>
+        <view>
+          <text>{{goodsDetail.basicInfo.name}}</text>
+          <text>￥{{goodsPrice}}</text>
+        </view>
+        <view>
+          <text>{{sizeData.propertyChildNames}}</text>
+          <text>×{{number}}</text>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="goodsDetail" wx:if="{{type=='购物车'}}" wx:for-items="{{cartList}}">
+      <image src="{{item.pic}}"></image>
+      <view>
+        <view>
+          <text>{{item.name}}</text>
+          <text>￥{{item.price}}</text>
+        </view>
+        <view>
+          <view>
+            <text wx:for="{{item.sku}}" wx:for-item="goods">{{goods.optionName}}:{{goods.optionValueName}}</text>
+          </view>
+          <text>×{{item.number}}</text>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+  <view class="send">
+    <view class="sendTop">
+      <text>配送方式</text>
+      <view bindtap="sendWay1">
+        <view class="{{flag1?'active':''}}"></view>
+        <text>快递</text>
+      </view>
+      <view bindtap="sendWay2">
+        <view class="{{flag2?'active':''}}"></view>
+        <text>到店自取</text>
+      </view>
+    </view>
+    <view class="sendMid" bindtap="pickAddress" wx:if="{{flag1&addressDefault!=''}}">
+      <text decode="{{true}}">{{addressDefault.linkMan}}&nbsp;&nbsp;{{addressDefault.mobile}}</text>
+      <text>{{addressDefault.address}}</text>
+    </view>
+    <view class="sendCheck" wx:if="{{flag1& addressDefault==''}}" bindtap="pickAddress">
+      <image src="/images/add_address.png"></image>
+      <text>选择地址</text>
+    </view>
+    <view class="sendBot">
+      <text>备注</text>
+      <input placeholder="如需备注请输入" bindinput="getRemarks"></input>
+    </view>
+
+
+  </view>
+  <view class="footer">
+    <view>合计：￥{{allPrice}} + 0 积分</view>
+    <view bindtap="orderSubmit">提交订单</view>
+  </view>
+</view>

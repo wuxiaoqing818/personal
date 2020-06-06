@@ -1,0 +1,126 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" id="wxqSwiper" indicator-active-color="white">
+      <block wx:for-items="{{goodsDetail.pics}}">
+        <swiper-item>
+          <image src="{{item.pic}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <view class="produce">
+    <text>{{goodsDetail.basicInfo.name}}</text>
+    <view>
+      <view class="produceTop">
+        <text>￥{{goodsDetail.basicInfo.minPrice}}</text>
+        <text>{{goodsDetail.basicInfo.numberSells}}人已买</text>
+      </view>
+      <view class="produceBot">
+        <button open-type="share" type="primary">
+          <image src="/images/relay.png"></image>
+        </button>
+        <button bindtap='gotoSubmit'>
+          <image src="/images/share.png"></image>
+        </button>
+
+      </view>
+
+
+    </view>
+  </view>
+  <view class="chooseSize" bindtap="chooseSize" wx:if="{{goodsDetail.properties}}">
+    <view>
+      <text>选择：</text>
+      <text wx:for-items="{{goodsDetail.properties}}">{{item.name}} </text>
+    </view>
+    <image src="/images/jiantou.png"></image>
+
+
+  </view>
+
+  <view class="footer">
+    <view class="fo1">
+      <view>
+        <image src="/images/customer_service.png"></image>
+        <text>客服</text>
+      </view>
+      <view>
+        <image src="/images/cart_img.png"></image>
+        <text>购物车</text>
+        <text>({{cartList.number}})</text>
+      </view>
+
+    </view>
+    <view class="fo2">
+      <button bindtap="addBuy" data-str="add">加入购物车</button>
+    </view>
+    <view class="fo3">
+      <button bindtap="addBuy" data-str="buy">立即购买</button>
+    </view>
+
+  </view>
+
+  <view class="goodsAttr {{goodsAttrFlag?'goodsAttrActive':''}}">
+    <view class="goodsAttrTop">
+      <view class="goodsContent">
+        <view class="goodsTop">
+          <image src="{{goodsDetail.pics[0].pic}}"></image>
+        </view>
+        <view class="goodsBot">
+          <text>{{goodsDetail.basicInfo.name}}</text>
+          <text wx:if="{{!goodsPrice}}">￥{{goodsDetail.basicInfo.minPrice}}</text>
+          <text wx:if="{{goodsPrice}}">￥{{goodsPrice}}</text>
+        </view>
+        <image src="/images/close.png" class="close" bindtap="close"></image>
+      </view>
+      <view class="size">
+        <view wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+          <view>{{property.name}}</view>
+          <view class="sizeChild">
+            <text wx:for="{{property.childsCurGoods}}" wx:for-index="idn" wx:key="id" data-idn="{{idn}}" data-idx="{{idx}}" data-active="{{item.active}}" data-propertyid="{{property.id}}" data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}"
+              class="{{item.active? 'sizeActive': ''}}" bindtap="labelItemTap">{{item.name}}</text>
+          </view>
+        </view>
+
+
+
+      </view>
+
+      <view class="buyNum">
+        <text>购买数量</text>
+        <view>
+          <text bindtap="cut">-</text>
+          <input value="{{number}}"></input>
+          <text bindtap="plus">+</text>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="goodsAttrBot" wx:if="{{!addBuyFlag}}">
+      <button bindtap="addCartTrue">加入购物车</button>
+    </view>
+    <view class="goodsAttrBot" wx:if="{{addBuyFlag}}">
+      <button bindtap="goOrderConfirm">立即购买</button>
+    </view>
+  </view>
+
+
+  <!-- 弹框 -->
+  <view class='tankuang2' wx:if="{{showhaibao}}">
+
+    <view class='container1' bindtap="previewImg">
+      <image style="width:100%;height:100%" src="{{imagePath}}"></image>
+    </view>
+    <view class="cancel" bindtap="cancelBanner">
+      <image src="/images/cancel.png" style="width:80rpx;height:80rpx"></image>
+    </view>
+  </view>
+  <canvas style="width:{{windowW}}px;height:{{windowH}}px;position:fixed;top:9999px;display:{{maskHidden?'none':''}}" canvas-id="mycanvas" />
+
+
+
+</view>
