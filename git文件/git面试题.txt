@@ -1,0 +1,103 @@
+1.本地仓库的作用？
+版本库或者是仓库，英文名Repository，其实啊说白了就是一个目录而且，本地仓库分为工作区---目录文件，编辑文件，暂存区--add，版本库--.git。这个目录中的所以文件都被git管理而且，不管你做什么操作都会被记录，包括：增加、删除、修改文件等，都会被记录下来，以便后来跟踪与修改相关记录，甚至被还原。另一个主要作用是保存本地代码，并将代码上传到远程仓库，也可以将远程仓库下载到本地仓库。
+
+2.本地合并分支冲突如何解决？
+一、是使用$git reset放弃合并操作，
+二、是打开冲突的文件，进行手工编辑解决冲突的部分
+
+3.git 如何提交 远程仓库github ？
+　　　1、创建git仓库 git init
+　　　2、添加上传地址   git remote add origin 地址 
+　　　3、把要上传的项目 git add .
+　　　4、在commit 提交到本地仓库
+　　　5、同步远程仓库  git pull origin master 
+　　　6、提交  git push -u origin master 
+
+4、github远程仓库同步到本地时候，代码冲突如何解决？ 
+//方法一
+$ git fetch origin master //从远程的origin仓库的master分支下载代码到本地的origin master
+$ git log -p master.. origin/master//比较本地的仓库和远程参考的区别
+$ git merge origin/master//把远程下载下来的代码合并到本地仓库，远程的和本地的合并
+//方法二
+$ git fetch origin master:temp //从远程的origin仓库的master分支下载到本地并新建一个分支temp
+$ git diff temp//比较master分支和temp分支的不同
+$ git merge temp//合并temp分支到master分支
+$ git branch -d temp//删除temp
+
+
+-----------------------------------------------------------------------
+
+
+
+git配置
+git config —－global user.email “github邮箱”
+git config —－global user.name “github用户名”
+
+创建版本库
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+
+
+
+1 git init  			实例化启动git
+
+  git add 文件名                将文件添加到暂存区
+
+  git add .                    将所有文件添加到本地仓库暂存区
+
+  git commit -m “描述”          添加到本地仓库
+
+git status                     掌握仓库状态
+
+
+git diff                        查看不同
+
+  git log  			查看提交日志
+
+  git reset --hard HEAD^        退回上一次提交的版本
+
+  git reflog                    查看每次提交的版本id
+
+  git reset --hard 版本id       回到指定的版本
+
+  git diff HEAD -- 文件名       命令可以查看工作区和版本库里面最新版本的区别
+ 
+  git checkout -- 文件名        撤销对文件的修改让这个文件回到最近一次git commit或git add时的状态
+  	
+
+将git仓库内的文件提交到github仓库***************************************
+  
+ git remote add origin 地址     添加链接地址
+ git remote rm origin           删除现在的链接地址
+
+ git remote -v         	        查看链接
+
+ git pull origin master         同步远程仓库
+
+ git push -u origin master      将本地仓库提交到远程仓库
+
+ git clone git仓库地址 	 	将github仓库克隆到本地
+
+ github设置ssh*********************************************************
+ http://blog.csdn.net/lsyz0021/article/details/52064829 
+ ssh-keygen -t rsa -C "your email"
+
+ git 分支管理**********************************************************
+
+ git checkout -b dev             创建并切换名为dev的分支
+
+ git checkout  dev               切换到dev分支
+
+ git branch                      查看所有分支
+
+ git branch   dev                创建dev分支
+
+ git merge  dev                  合并dev分支到当前分支
+
+ git branch -d dev                删除dev分支
+ 
+ git branch -D <name>             删除一个未合并的分支
+
+						              --------吴晓晴
